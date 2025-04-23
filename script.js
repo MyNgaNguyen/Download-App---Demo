@@ -9,25 +9,25 @@ const apps = [
         titleTop: "Numbala",
         titleBottom: "Sàn Thương Mại Điện Tử",
         logo: "img/numbala.png",
-        link: "https://example.com/app3"
+        link: "https://numbala.com"
     },
     {
         titleTop: "VNeTrip",
         titleBottom: "Du Lịch Số",
         logo: "img/VNetrip.png",
-        link: "https://example.com/app3"
+        link: "https://vnetrip.com"
     },
     {
         titleTop: "ECheck",
         titleBottom: "Tra Cứu - Truy Xuất - Xác Thực",
         logo: "img/ECheck.png",
-        link: "https://example.com/app4"
+        link: "https://echeck.numbala.com"
     },
     {
         titleTop: "VnLand",
         titleBottom: "Bất Động Sản Việt",
         logo: "img/vnland.png",
-        link: "https://example.com/app5"
+        link: "https://vnland.info"
     }
   ];
   
