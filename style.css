@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  body {
+    margin: 0;
+    padding: 2rem;
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInBody 1s ease;
+  }
+  
+  h1 {
+    margin-bottom: 2rem;
+    color: #00796b;
+    font-size: 2rem;
+    animation: slideDown 0.7s ease;
+  }
+  
+  .app-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 box mỗi hàng */
+    gap: 1rem;
+    width: 100%;
+    max-width: 1000px;
+  }
+  
+  .app-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 220px;
+    background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transform: translateY(30px);
+  opacity: 0;
+  animation: fadeUp 0.6s forwards;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+
+  }
+  
+  
+  
+  .app-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  }
+  
+  .app-logo {
+    width: auto;
+    height: 60px;
+    margin-bottom: 1rem;
+    object-fit: contain;
+  }
+  
+  .app-title {
+    margin-bottom: 0.75rem;
+  }
+  
+  .title-top {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #004d40;
+  }
+  
+  .title-bottom {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0.25rem;
+  }
+  
+  .btn-container {
+    margin-top: auto;
+  }
+  
+  .download-btn {
+    background: #00796b;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .download-btn::after {
+    content: "";
+    position: absolute;
+    background: rgba(255,255,255,0.4);
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+  }
+  
+  .download-btn:active::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  
+  @keyframes fadeInBody {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes fadeUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+
+/* Desktop mặc định: 5 cột (đã có sẵn) */
+
+/* Tablet: 3 cột */
+@media (max-width: 1024px) {
+  .app-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile lớn: 2 cột */
+@media (max-width: 768px) {
+  .app-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem;
+  }
+
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+
+/* Mobile nhỏ: 1 cột */
+@media (max-width: 480px) {
+  .app-container {
+    grid-template-columns: 1fr;
+  }
+
+  .app-card {
+    height: auto;
+    padding: 1rem;
+  }
+
+  .download-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+@media (hover: hover) {
+  .app-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  }
+}
+.download-btn {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+}
